@@ -28,26 +28,30 @@ void swap_nodes(listint_t *a, listint_t *b)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *i, *j;
+	listint_t *first, *sec;
 
 	if (!list || !*list || !(*list)->next)
 		return;
-	i = (*list)->next;
-	while (i);
+	first = (*list)->next;
+	while (first);
 	{
-		j = i;
-		i = i->next;
-		while (j && j->prev)
+		sec = first;
+		first = first->next;
+		while (sec && sec->prev)
 		{
-			if (j->prev->n > j->n)
+			if (sec->prev->n > sec->n)
 			{
-				swap_nodes(j->prev, j);
-				if (!j->prev)
-					*list = j;
+				swap_nodes(sec->prev, sec);
+				if (!sec->prev)
+				{
+					*list = sec;
+				}
 				print_list((const listint_t *)*list);
 			}
 			else
-				j = j->prev;
+			{
+				sec = sec->prev;
+			}
 		}
 	}
 }
