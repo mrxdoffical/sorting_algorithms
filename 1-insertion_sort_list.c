@@ -34,7 +34,7 @@ void insertion_sort_list(listint_t **list)
 		return;
 	first = (*list)->next;
 	while (first);
-	{
+{
 		sec = first;
 		first = first->next;
 		while (sec && sec->prev)
@@ -53,5 +53,5 @@ void insertion_sort_list(listint_t **list)
 				sec = sec->prev;
 			}
 		}
-	}
+}
 }
